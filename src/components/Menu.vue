@@ -11,7 +11,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 
 export default {
   data () {
@@ -20,9 +19,9 @@ export default {
     }
   },
   mounted () {
-    axios
-      .get('https://dev.menu.ninja/api/menu/156?key=8j5vfe%24*pfb**rzt&pretty=1')
-      .then(response => (this.menuItems = response.data.menu.items))
+    fetch('https://dev.menu.ninja/api/menu/156?key=8j5vfe%24*pfb**rzt&pretty=1')
+      .then(response => response.json())
+      .then(data => (this.menuItems = data.menu.items))
   }
 
 }

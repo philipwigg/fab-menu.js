@@ -3,9 +3,11 @@
   <tr>
     <th>Name</th>
     <th>Details</th>
+    <th>Image</th>
   <tr v-for="item in menuItems" :key="item.name">
     <td>{{ item.name }}</td>
     <td>{{ item.details }}</td>
+    <td><img :src="item.image"></td>
   </tr>
 </table>
 </template>
